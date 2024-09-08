@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Slide Animation with Button</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Card container -->
+  <div class="card-container">
+    <!-- Main card with image -->
+    <div class="card main-card">
+      <img src="target.png" alt="Main Card">
+    </div>
+
+    <!-- Side card with image -->
+    <div class="card side-card">
+      <img src="sidecard.png" alt="Side Card">
+    </div>
+
+    <!-- Down card 1 with image -->
+    <div class="card down-card1">
+      <img src="downcard1.png" alt="Down Card 1">
+    </div>
+
+    <!-- Down card 2 with image -->
+    <div class="card down-card2">
+      <img src="downcard2.png" alt="Down Card 2">
+    </div>
+
+    <!-- Button card -->
+    <div class="button-card">
+      <img src="buttoncard.png" alt="Button Card">
+    </div>
+  </div>
+
+  <script>
+    // Trigger the sliding animations after 5 seconds
+    setTimeout(() => {
+      document.querySelector('.side-card').classList.add('slide-side');
+      document.querySelector('.down-card1').classList.add('slide-down1');
+
+      // Delay for down-card2 by 0.8s
+      setTimeout(() => {
+        document.querySelector('.down-card2').classList.add('slide-down2');
+      }, 800); // 0.8-second delay
+
+      // Show and animate the button card after all cards have moved
+      setTimeout(() => {
+        document.querySelector('.button-card').classList.add('pop-up');
+      }, 1500); // Button appears after 1.5s (all cards moved)
+
+    }, 5000); // 5-second delay for all cards to start moving
+  </script>
+</body>
+</html>

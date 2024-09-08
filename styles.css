@@ -1,0 +1,136 @@
+/* Body and background settings */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #707070;
+}
+
+/* Card container */
+.card-container {
+  position: absolute; /* Change to absolute positioning */
+  top: 20px; /* 20px from the top of the page */
+  bottom: 20px; /* 20px from the bottom of the page */
+  left: 20px; /* 20px from the left edge of the page */
+  right: 20px; /* 20px from the right edge of the page */
+  display: flex;
+  justify-content: flex-start; /* Align items to the start of the container */
+  align-items: flex-start; /* Align items to the top of the container */
+}
+
+/* Common card styles */
+.card {
+  position: absolute;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 1s ease;
+  background-color: #8f00ff; /* Set background color */
+}
+
+/* Text inside cards */
+.card span {
+  font-size: 48px; /* Set font size to 48px */
+  color: white; /* Optional: set text color for better visibility */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+/* Main card */
+.main-card {
+  width: 1050px;
+  height: 603px;
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+
+/* Side card */
+.side-card {
+  width: 1050px;
+  height: 603px;
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+/* Down card 1 */
+.down-card1 {
+  width: 1050px;
+  height: 301.5px; /* Half the height of the original card */
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+/* Down card 2 */
+.down-card2 {
+  width: 1050px;
+  height: 301.5px; /* Half the height of the original card */
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+/* Button card (positioned centrally 201.5px below sidecard and 300px right from the right of down cards) */
+.button-card {
+  position: absolute;
+  width: 600px; /* Increased width for more space */
+  height: 300px; /* Increased height for more space */
+  z-index: 4; /* Ensure it's on top */
+  left: calc(1055px + 300px - 75px); /* Adjusted to center with increased width */
+  top: calc(608px + 201.5px + 20px - 75px); /* Adjusted to center with increased height */
+  transform: scale(0);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+  display: flex; /* Center text horizontally */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  background-color: #8f00ff; /* Set background color */
+}
+
+/* Text inside button card */
+.button-card span {
+  font-size: 48px; /* Set font size to 48px */
+  color: white; /* Optional: set text color for better visibility */
+  text-align: center; /* Center text horizontally */
+}
+
+
+/* Sliding animation for side card (5px to the right) */
+.slide-side {
+  transform: translateX(1055px); /* Move to the right edge and 5px gap */
+}
+
+/* Sliding animation for down card 1 (5px to the bottom) */
+.slide-down1 {
+  transform: translateY(608px); /* Move to the bottom edge and 5px gap */
+}
+
+/* Sliding animation for down card 2 (5px below down card 1, 301.5px + 5px = 306.5px) */
+.slide-down2 {
+  transform: translateY(calc(608px + 306.5px)); /* Slide down after downcard1, keeping 5px gap */
+}
+
+/* Pop-up animation (appear, scale up to 1.2x, and then scale back to normal) */
+.pop-up {
+  opacity: 1;
+  transform: scale(1.2);
+  animation: scaleDown 1s ease-in-out forwards;
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
